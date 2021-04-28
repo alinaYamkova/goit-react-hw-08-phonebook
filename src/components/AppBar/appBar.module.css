@@ -1,0 +1,8 @@
+.AppBar {
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  border-bottom: 3px solid rgb(202, 197, 197);
+  max-height: 50px;
+  padding: 12px 24px;
+}
