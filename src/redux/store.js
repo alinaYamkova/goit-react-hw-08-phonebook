@@ -4,7 +4,8 @@ import {
   persistStore,
   persistReducer,
   FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
-import contactsReducer from "./contacts/contacts-reduser";
+import storage from "redux-persist/lib/storage";
+import contactsReducer from "./contacts/contacts-redusers";
 import { authReducer } from './auth/auth-reducers';
 
 const middleware = [

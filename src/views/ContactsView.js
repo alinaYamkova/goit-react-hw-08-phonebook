@@ -1,7 +1,7 @@
 import React from "react";
-import ContactForm from "../Components/ContactForm/FormPhonebook";
-import ContactList from "../Components/ContactList/ContactList";
-import Filter from "../Components/Filter/Filter";
+import ContactForm from "../components/ContactForm/FormPhonebook";
+import ContactList from "../components/ContactList/ContactList";
+import Filter from "../components/Filter/Filter";
 
 const ContactsView = () => {
   return (

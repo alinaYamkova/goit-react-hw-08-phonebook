@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Form, Button } from 'react-bootstrap'
 import { connect } from 'react-redux'
-import { authOperations } from '../../redux/auth';
+import authOperations from '../../redux/auth/auth-operations';
 
 class Login extends Component {
   state = {
@@ -10,7 +10,7 @@ class Login extends Component {
     };
 
   handleChange = ({ target: { name, value } }) => {
-    his.setState({ [name]: value });
+    this.setState({ [name]: value });
   };
         
   handleSubmit = e => {
@@ -55,6 +55,8 @@ class Login extends Component {
   }
 }
 // сокращенная запись mapDispatchToProps (пример Репеты)
-const mapDispatchToProps = { myLogin: authOperations.login };
+const mapDispatchToProps = {
+  myLogin: authOperations.loginUser,
+};
 
 export default connect (null, mapDispatchToProps)(Login);

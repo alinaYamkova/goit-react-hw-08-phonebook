@@ -9,12 +9,12 @@ import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      {/* <PersistGate loading={null} persistor={store.persistor}> */}
+    <Provider store={store.store}>
+      <PersistGate loading={null} persistor={store.persistor}>
         <BrowserRouter>
           <App />
         </BrowserRouter>
-      {/* </PersistGate> */}
+      </PersistGate>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

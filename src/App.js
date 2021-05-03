@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, lazy, Suspense } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-import getCurrentUser from './redux/auth/auth-operations';
+// import { autOperations } from './redux/auth';
+import authOperations from './redux/auth/auth-operations'
 
 import AppBar from './components/AppBar/AppBar';
 import Loader from './data/Loader';
@@ -25,7 +26,7 @@ const Contacts = lazy(() =>
 
 class App extends Component {
   componentDidMount() {
-    this.props.getCurrentUser();
+    this.props.onGetCurrentUser();
   }
 
   render() {
@@ -60,6 +61,6 @@ class App extends Component {
 }
 
 const mapDispatchToProps = {
-  getCurrentUser,
+  onGetCurrentUser: authOperations.getCurrentUser,
 };
 export default connect(null, mapDispatchToProps)(App);
