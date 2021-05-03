@@ -18,19 +18,18 @@ class ContactForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const { name, number } = this.state;
+    const { name } = this.state;
     const { contacts , onSubmit } = this.props;
    
     const newName = contacts.find(
       (item) => item.name.toLowerCase() === name.toLowerCase()
     );
     if (newName) {
-      alert(`${name} уже есть в списке ваших контактов`);
+      alert(`${name} is already in a list`);
       return;
     }
 
-    const newContact = { name: name.trim(), number: number.trim() };
-    onSubmit(newContact);
+    onSubmit(this.state);
     this.reset();
   };
 
@@ -39,6 +38,7 @@ class ContactForm extends Component {
   };
 
   render() {
+    const { name, number } = this.state;
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -47,7 +47,7 @@ class ContactForm extends Component {
             <input
               id={uuidv4()}
               className={s.input}
-              value={this.state.name}
+              value={name}
               onChange={this.handleChange}
               type="text"
               name="name"
@@ -59,7 +59,7 @@ class ContactForm extends Component {
             <input
               className={s.input}
               id={uuidv4()}
-              value={this.state.number}
+              value={number}
               onChange={this.handleChange}
               type="text"
               name="number"
@@ -81,7 +81,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onSubmit: (contact) => dispatch(contactsOperations.addContacts(contact)),
+  onSubmit: (contact) => dispatch(contactsOperations.addContact(contact)),
 });
     
 export default connect(mapStateToProps,mapDispatchToProps) (ContactForm);

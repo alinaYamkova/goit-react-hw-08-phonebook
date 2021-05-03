@@ -1,18 +1,11 @@
-// Imports from React
 import React from 'react';
-// Imports of components
-import Main from '../components/Main';
-import Section from '../components/Section';
-import PageTitle from '../components/PageTitle';
 
-const HomePageView = () => {
-  return (
-    <Main>
-      <Section>
-        <PageTitle title="One App for ALL your contacts!" />
-      </Section>
-    </Main>
-  );
-};
+const HomePageView = () => (
+  <div>
+    <h1>Phonebook</h1>
+    {/* <img src={MyImage} alt="icon" width="200"></img> */}
+        
+  </div>
+);
 
 export default HomePageView;

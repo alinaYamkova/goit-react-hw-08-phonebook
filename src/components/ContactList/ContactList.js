@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { contactsOperations, contactsSelectors } from "../../redux/contacts";
 import Loader from '../../Loader/Loader';
 import PropTypes from 'prop-types';
 import s from '../ContactList/phonebook.module.css';
-import { contactsOperations, contactsSelectors } from "../../redux/contacts";
 
 class ContactList extends Component {
   componentDidMount() {
@@ -51,7 +51,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onDeleteContact: id => dispatch(contactsOperations.deleteContacts(id)),
+  onDeleteContact: id => dispatch(contactsOperations.deleteContact(id)),
   fetchContact: () => dispatch(contactsOperations.fetchContacts()),
 });
 

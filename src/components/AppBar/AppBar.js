@@ -24,7 +24,7 @@ const AppBar = ({isAuthenticated}) => {
   );
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   isAuthenticated: authSelectors.getIsAuthenticated (state),
 });
 

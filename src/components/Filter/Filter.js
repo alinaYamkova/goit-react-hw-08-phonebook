@@ -26,11 +26,6 @@ const mapStateToProps = (state) => ({
   filterVal: contactsSelectors.getFilter(state),
 });
 
-//фыльтрування 
-//  filteredContacts = (e) => {
-//   this.setState({ filter: e.target.value });
-// };
-
 const mapDispatchToProps = (dispatch) => ({
   onChangeFilter: (e) => dispatch(filterContacts(e.target.value)),
 });

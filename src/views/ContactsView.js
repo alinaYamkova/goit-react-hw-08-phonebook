@@ -1,23 +1,16 @@
-import React from 'react';
-import Main from '../components/Main';
-import Section from '../components/Section';
-import Title from '../components/Title';
-import ContactForm from '../components/ContactForm';
-import Filter from '../components/Filter';
-import ContactList from '../components/ContactList';
+import React from "react";
+import ContactForm from "../Components/ContactForm/FormPhonebook";
+import ContactList from "../Components/ContactList/ContactList";
+import Filter from "../Components/Filter/Filter";
 
 const ContactsView = () => {
   return (
-    <Main>
-      <Section>
-        <Title title="Add contacts" />
-        <ContactForm />
-        <Title title="Find contacts" />
-        <Filter />
-        <Title title="Contacts" />
-        <ContactList />
-      </Section>
-    </Main>
+    <>
+      <h1>Phonebook</h1>
+      <ContactForm />
+      <Filter />
+      <ContactList />
+    </>
   );
 };
 

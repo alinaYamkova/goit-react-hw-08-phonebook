@@ -1,31 +1,27 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getCurrentUser } from './redux/auth/auth-operations';
+import getCurrentUser from './redux/auth/auth-operations';
 
 import AppBar from './components/AppBar/AppBar';
 import Loader from './data/Loader';
 import routes from './routes';
-import PrivateRoute from './components/PrivateRoute';
-import PublicRoute from './components/PublicRoute';
-// Lazy imports for views
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import PublicRoute from './components/PublicRoute/PublicRoute'
+import "./App.css";
+
 const HomePage = lazy(() =>
-  import('./views/HomePageView' /* webpackChunkName: "home-page" */),
+  import('./views/HomePageView' /* webpackChunkName: "home-view" */),
 );
 const LoginPage = lazy(() =>
-  import('./views/LoginPageView' /* webpackChunkName: "login-page" */),
+  import('./views/LoginPageView' /* webpackChunkName: "login-view" */),
 );
-const RegisterPage = lazy(() =>
-  import('./views/RegisterPageView' /* webpackChunkName: "register-page" */),
+const RegistrationPage = lazy(() =>
+  import('./views/RegisterPageView' /* webpackChunkName: "registration-view" */),
 );
 const Contacts = lazy(() =>
-  import('./views/ContactsView' /* webpackChunkName: "contacts-page" */),
+  import('./views/ContactsView' /* webpackChunkName: "contacts-view" */),
 );
-const NotFoundPage = lazy(() =>
-  import('./views/NotFoundPageView' /* webpackChunkName: "contacts-page" */),
-);
-
-import "./App.css";
 
 class App extends Component {
   componentDidMount() {
@@ -41,7 +37,7 @@ class App extends Component {
             <Route exact path={routes.home} component={HomePage} />
             <PublicRoute
               path={routes.register}
-              component={RegisterPage}
+              component={RegistrationPage}
               restricted
               redirectTo={routes.home}
             />
@@ -56,7 +52,6 @@ class App extends Component {
               component={Contacts}
               redirectTo={routes.login}
             />
-            <Route component={NotFoundPage} />
           </Switch>
         </Suspense>
       </>

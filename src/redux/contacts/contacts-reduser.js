@@ -5,12 +5,12 @@ import {
   fetchContactsRequest,
   fetchContactsSuccess,
   fetchContactsError,
-  addContactsRequest,
-  addContactsSuccess,
-  addContactsError,
-  deleteContactsRequest,
-  deleteContactsSuccess,
-  deleteContactsError,
+  addContactRequest,
+  addContactSuccess,
+  addContactError,
+  deleteContactRequest,
+  deleteContactSuccess,
+  deleteContactError,
   filterContacts,
 } from './contacts-actions';
 

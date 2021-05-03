@@ -1,19 +1,11 @@
-// Imports from React
 import React from 'react';
-// Imports of components
-import Main from '../components/Main';
-import Section from '../components/Section';
-import PageTitle from '../components/PageTitle';
-import RegisterForm from '../components/RegisterForm';
+import RegistrationForm from '../components/RegistrationForm/RegistrationForm';
 
 const RegisterPageView = () => {
   return (
-    <Main>
-      <Section>
-        <PageTitle title="Please, register:" />
-        <RegisterForm />
-      </Section>
-    </Main>
+    <>
+      <RegistrationForm />
+    </>
   );
 };
 
