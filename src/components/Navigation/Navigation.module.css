@@ -16,6 +16,11 @@
   background-color: teal;
 }
 
+.NavLink-active {
+  color: red;
+  text-decoration: none;
+}
+
 a {
   text-transform: uppercase;
   text-align: center;
@@ -32,10 +37,6 @@ a {
   margin-right: 15px;
 }
 
-.navLinkActive {
-  color: red;
-  text-decoration: none;
-}
 a:hover {
   color: rgb(169, 6, 68);
   box-shadow: 0 0 5px 2px rgb(255, 0, 89);

@@ -1,7 +1,6 @@
 import React, { Component, lazy, Suspense } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-// import { autOperations } from './redux/auth';
 import authOperations from './redux/auth/auth-operations'
 
 import AppBar from './components/AppBar/AppBar';
@@ -9,6 +8,8 @@ import Loader from './data/Loader';
 import routes from './routes';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import PublicRoute from './components/PublicRoute/PublicRoute'
+// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/react-bootstrap/dist/react-bootstrap'
 import "./App.css";
 
 const HomePage = lazy(() =>
