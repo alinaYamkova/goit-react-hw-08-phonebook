@@ -21,7 +21,7 @@
   text-decoration: none;
 }
 
-a {
+.NavLink, a {
   text-transform: uppercase;
   text-align: center;
   font-size: 14px;
@@ -38,6 +38,6 @@ a {
 }
 
 a:hover {
-  color: rgb(169, 6, 68);
+  color:  red;
   box-shadow: 0 0 5px 2px rgb(255, 0, 89);
 }

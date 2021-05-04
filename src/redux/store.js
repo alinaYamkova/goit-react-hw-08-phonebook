@@ -6,7 +6,7 @@ import {
   FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import contactsReducer from "./contacts/contacts-redusers";
-import { authReducer } from './auth/auth-reducers';
+import { authReducer } from './auth';
 
 const middleware = [
   ...getDefaultMiddleware({

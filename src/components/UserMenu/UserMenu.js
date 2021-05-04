@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import authSelectors from '../../redux/auth/auth-selectors';
-import authOperations from '../../redux/auth/auth-operations';
+import { authSelectors, authOperations } from '../../redux/auth';
 import defaultAvatar from './default-avatar.png';
 import s from './UserMenu.module.css';
 

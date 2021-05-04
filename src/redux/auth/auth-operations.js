@@ -1,3 +1,4 @@
+import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import {
   registerRequest,
   registerSuccess,
@@ -78,4 +79,5 @@ const getCurrentUser = () => async (dispatch, getState) => {
   }
 };
 
-export default { registerUser, loginUser, logoutUser, getCurrentUser };
+const authOperations = { registerUser, loginUser, logoutUser, getCurrentUser };
+export default authOperations;

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Form, Button } from 'react-bootstrap'
 import { connect } from 'react-redux'
-import authOperations from '../../redux/auth/auth-operations';
+import { authOperations } from '../../redux/auth';
 
-class Login extends Component {
+export class Login extends Component {
   state = {
     email: '',
     password: '',
@@ -21,9 +21,9 @@ class Login extends Component {
 
   render() {
     const { email, password } = this.state;
-    const {handleChange} = this;
+    const {handleChange, handleSubmit} = this;
   return (
-    <Form onSubmit={this.handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       <Form.Group controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
           <Form.Control
@@ -54,7 +54,7 @@ class Login extends Component {
     )
   }
 }
-// сокращенная запись mapDispatchToProps (пример Репеты)
+// сокращенная запись
 const mapDispatchToProps = {
   myLogin: authOperations.loginUser,
 };

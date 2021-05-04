@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import authOperations from '../../redux/auth/auth-operations';
+import { authOperations } from '../../redux/auth';
 
-class RegistrationForm extends Component {
+export class RegistrationForm extends Component {
   state = {
     name: '',
     email: '',
@@ -22,8 +22,9 @@ class RegistrationForm extends Component {
 
   render() {
     const { name, email, password } = this.state;
+    const { handleSubmit, handleChange } = this;
     return (
-      <Form onSubmit={this.handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>UserName</Form.Label>
           <Form.Control
@@ -31,7 +32,7 @@ class RegistrationForm extends Component {
             placeholder="Enter your name"
             name="name"
             value={name}
-            onChange={this.handleChange}
+            onChange={handleChange}
           />
         </Form.Group>
         <Form.Group controlId="formBasicEmail">
@@ -41,7 +42,7 @@ class RegistrationForm extends Component {
             placeholder="Enter email"
             name="email"
             value={email}
-            onChange={this.handleChange}
+            onChange={handleChange}
           />
         </Form.Group>
 
@@ -52,7 +53,7 @@ class RegistrationForm extends Component {
             placeholder="Password"
             name="password"
             value={password}
-            onChange={this.handleChange}
+            onChange={handleChange}
           />
         </Form.Group>
 
@@ -69,7 +70,7 @@ const mapDispatchToProps = {
 };
 // або
 // const mapDispatchToProps = (dispatch) => ({
-//  myProps: (data) => dispatch(authOperations.register(data)),
+//  myProps: (data) => dispatch(registerUser(data)),
 // });
 
 export default connect(null, mapDispatchToProps)(RegistrationForm);

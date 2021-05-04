@@ -1,9 +1,9 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import routes from "../../routes";
-import authSelectors from '../../redux/auth/auth-selectors';
+import routes from '../../routes';
+import { authSelectors } from '../../redux/auth';
 import s from './Navigation.module.css';
 
 // const style = {
@@ -21,25 +21,28 @@ import s from './Navigation.module.css';
 
 const Navigation = ({ isAuthenticated }) => {
   return (
-    <nav className={s.nav}>
-          <NavLink 
-            exact 
-            to={routes.home} 
+    // <div>
+      <nav>
+        <NavLink
+          to={routes.home}
+          exact
+          className={s.NavLink}
+          activeClassName={s['NavLink-active']}
+        >
+          Home
+        </NavLink>
+        {isAuthenticated && (
+          <NavLink
+            to={routes.contacts}
+            exact
             className={s.NavLink}
-            activeClassName={s['NavLink-active']}      
+            activeClassName={s['NavLink-active']}
           >
-            Home
+            Phonebook
           </NavLink>
-          {isAuthenticated && (
-            <NavLink
-              to={routes.contacts}
-              className={s.NavLink}
-              activeClassName={s['NavLink-active']}
-            >
-              Contacts
-            </NavLink>
         )}
-    </nav>
+      </nav>
+    // </div>
   );
 };
 
