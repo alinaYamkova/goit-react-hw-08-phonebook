@@ -33,11 +33,11 @@ const registerUser = user => async dispatch => {
   try {
     const response = await axios.post('/users/signup', user);
     authToken.set(response.data.token);
-    // dispatch(registerSuccess(response.data));
-    console.log(dispatch(registerSuccess(response.data)))
+    dispatch(registerSuccess(response.data));
+    // console.log(dispatch(registerSuccess(response.data)))
   } catch (error) {
-    // dispatch(registerError(error.message));
-    console.log(dispatch(registerError(error.message)))
+    dispatch(registerError(error.message));
+    // console.log(dispatch(registerError(error.message)))
   }
 };
 
