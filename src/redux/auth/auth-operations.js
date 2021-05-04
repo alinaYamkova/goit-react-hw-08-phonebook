@@ -27,14 +27,17 @@ const authToken = {
 };
 
 const registerUser = user => async dispatch => {
-  dispatch(registerRequest());
+  // dispatch(registerRequest());
+    console.log(dispatch(registerRequest()));
 
   try {
     const response = await axios.post('/users/signup', user);
     authToken.set(response.data.token);
-    dispatch(registerSuccess(response.data));
+    // dispatch(registerSuccess(response.data));
+    console.log(dispatch(registerSuccess(response.data)))
   } catch (error) {
-    dispatch(registerError(error.message));
+    // dispatch(registerError(error.message));
+    console.log(dispatch(registerError(error.message)))
   }
 };
 
@@ -48,6 +51,7 @@ const loginUser = user => async dispatch => {
   } catch (error) {
     dispatch(loginError(error.message));
   }
+  console.log(loginUser)
 };
 
 const logoutUser = () => async dispatch => {
