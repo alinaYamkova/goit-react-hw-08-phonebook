@@ -5,10 +5,10 @@ import defaultAvatar from './default-avatar.png';
 import s from './UserMenu.module.css';
 
 const UserMenu = ({ avatar, name, onLogout }) => (
-  <div className={s.container}>
-    <img src={avatar} alt="" width="32" className={s.avatar} />
+  <div className={s.box}>
+    <img className={s.avatar} src={avatar} alt="" width="32" />
     <span className={s.name}>Welcome, {name}</span>
-    <button type="button" onClick={onLogout}>
+    <button className={s.btn} type="button" onClick={onLogout}>
       Logout
     </button>
   </div>

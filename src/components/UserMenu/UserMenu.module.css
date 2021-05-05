@@ -1,16 +1,39 @@
-.container {
-    display: flex;
-    align-items: center;
-    margin-right: 0;
-    margin-left: auto;
-};
+.box {
+  display: flex;
+  align-items: center;
+  margin-right: 0;
+  margin-left: auto;
+}
 
 .avatar {
-    margin-right: 4px;
-    border-radius: "50%";
-};
+  margin-right: 5px;
+  border-radius: 50%;
+}
 
 .name {
-    font-weight: 700;
-    margin-right: 12px;
-};
+  font-weight: 700;
+  margin-right: 12px;
+}
+
+.btn {
+  display: inline-block;
+  min-width: 100px;
+  padding: 6px;
+  background-color: initial;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 0 3px 2px #097f86;
+  text-decoration: none;
+  cursor: pointer;
+  border-style: none;
+  /* border-color: none; */
+}
+
+.btn:hover {
+  color: red;
+  box-shadow: 0 0 5px 2px rgb(255, 0, 89);
+}

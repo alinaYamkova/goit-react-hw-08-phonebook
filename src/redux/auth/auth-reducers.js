@@ -2,13 +2,10 @@ import { combineReducers } from 'redux';
 import { createReducer } from '@reduxjs/toolkit';
 
 import {
-  // registerRequest,
   registerSuccess,
   registerError,
-  // loginRequest,
   loginSuccess,
   loginError,
-  // logoutRequest,
   logoutSuccess,
   logoutError,
   getCurrentUserRequest,

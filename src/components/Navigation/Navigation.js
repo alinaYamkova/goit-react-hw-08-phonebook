@@ -34,6 +34,7 @@ const Navigation = ({ isAuthenticated }) => {
         {isAuthenticated && (
           <NavLink
             to={routes.contacts}
+            // to="/contacts"
             exact
             className={s.NavLink}
             activeClassName={s['NavLink-active']}

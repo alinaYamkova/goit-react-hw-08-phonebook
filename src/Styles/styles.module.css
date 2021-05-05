@@ -27,16 +27,16 @@ img {
   min-width: 150px;
 }
 
-.NavLink {
+/* .NavLink {
   text-align: center;
   font-size: 24px;
   counter-reset: currentColor;
-}
+} */
 
-.active {
+/* .active {
   color: rgb(209, 49, 102);
   font-style: italic;
-}
+} */
 
 .Title {
   padding: 0;
@@ -65,14 +65,14 @@ img {
   margin-right: auto;
 }
 
-.AppBar {
+/* .AppBar {
   display: flex;
   align-items: center;
   min-height: 80px;
   padding-left: 30px;
   padding-right: 30px;
   border-bottom: 1px solid #ccc;
-}
+} */
 
 .btn {
   background-color: #0baeba;

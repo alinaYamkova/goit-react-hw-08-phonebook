@@ -1,4 +1,5 @@
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
 import {
   registerRequest,
   registerSuccess,
@@ -6,14 +7,13 @@ import {
   loginRequest,
   loginSuccess,
   loginError,
-  logoutRequest,
   logoutSuccess,
+  logoutRequest,
   logoutError,
   getCurrentUserRequest,
   getCurrentUserSuccess,
   getCurrentUserError,
 } from './auth-actions';
-import axios from 'axios';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
@@ -27,17 +27,15 @@ const authToken = {
 };
 
 const registerUser = user => async dispatch => {
-  // dispatch(registerRequest());
-    console.log(dispatch(registerRequest()));
+  dispatch(registerRequest());
 
   try {
     const response = await axios.post('/users/signup', user);
+    console.log(response);
     authToken.set(response.data.token);
     dispatch(registerSuccess(response.data));
-    // console.log(dispatch(registerSuccess(response.data)))
   } catch (error) {
     dispatch(registerError(error.message));
-    // console.log(dispatch(registerError(error.message)))
   }
 };
 
@@ -51,7 +49,7 @@ const loginUser = user => async dispatch => {
   } catch (error) {
     dispatch(loginError(error.message));
   }
-  console.log(loginUser)
+  console.log(loginUser);
 };
 
 const logoutUser = () => async dispatch => {
@@ -59,7 +57,7 @@ const logoutUser = () => async dispatch => {
 
   try {
     await axios.post('/users/logout');
-    authToken.unset();
+    // authToken.unset();
     dispatch(logoutSuccess());
   } catch (error) {
     dispatch(logoutError(error.message));
@@ -67,7 +65,9 @@ const logoutUser = () => async dispatch => {
 };
 
 const getCurrentUser = () => async (dispatch, getState) => {
-  const { auth: { token } } = getState();
+  const {
+    auth: { token },
+  } = getState();
 
   if (!token) {
     return;

@@ -1,12 +1,12 @@
-import React from "react";
-import ContactForm from "../components/ContactForm/FormPhonebook";
-import ContactList from "../components/ContactList/ContactList";
-import Filter from "../components/Filter/Filter";
+import React from 'react';
+import ContactForm from '../components/ContactForm/FormPhonebook.js';
+import ContactList from '../components/ContactList/ContactList.js';
+import Filter from '../components/Filter/Filter.js';
 
 const ContactsView = () => {
   return (
     <>
-      <h1>Phonebook</h1>
+      <h2>Phonebook</h2>
       <ContactForm />
       <Filter />
       <ContactList />

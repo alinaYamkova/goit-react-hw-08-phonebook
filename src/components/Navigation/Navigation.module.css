@@ -41,6 +41,6 @@ nav  a:nth-last-child(2) {
 }
 
 a:hover {
-  color:  red;
+  color:  rgb(99, 3, 32);
   box-shadow: 0 0 5px 2px rgb(255, 0, 89);
 }
